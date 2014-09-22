@@ -24,7 +24,7 @@ primes = 2 : (r 3 [2]) where
         else r (a+2) ps
 
 testPrime :: Int -> [Int] -> Bool
-testPrime a ps = not . or $ fmap (divis a) (candidates a ps)
+testPrime a ps = not . or . fmap (divis a) $ (candidates a ps)
 
 -- Values that need to be checked for divisibility
 candidates :: Int -> [Int] -> [Int]
